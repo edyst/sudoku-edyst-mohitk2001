@@ -27,15 +27,13 @@ body {
   border: 1px solid #344861;
   border-collapse: collapse;
 }
-.outer> tbody>tr>td{
-    border: 1px solid #344861;
-}
+
 .inner-box{
     border: 1px solid #bec6d4;
     border-collapse: collapse;
 }
 
-.cells {
+.cell {
   height: 60px;
   width: 60px;
   border: 1px solid #bec6d4;
@@ -46,8 +44,19 @@ input[type="number"]{
     width: 100%;
     border: 1px solid #bec6d4;
     outline: none;
+    text-align: center;
+    font-size: 100%;
 }
-
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
 
 .validation{
     width: 70%;
