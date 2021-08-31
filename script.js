@@ -51,6 +51,8 @@ window.onload = () => {
       if(!document.getElementById(`c${a}${b}`).disabled){
         document.getElementById(`c${a}${b}`).removeAttribute("style") 
         document.getElementById(`c${a}${b}`).classList.add("hoverEffect")
+        document.getElementById(`c${a}${b}`).setAttribute("onfocus","runFocus(this);")
+        document.getElementById(`c${a}${b}`).setAttribute("onblur","runBlur(this);")
       }
     }
   }
@@ -65,6 +67,10 @@ const clearPreviousBoard = () => {
       removeThese.style.background = "#fff";
     if(removeThese.getAttribute("class")){
       removeThese.classList.remove("hoverEffect");
+    }
+    if(removeThese.getAttribute("onfocus") && removeThese.getAttribute("onblur")){
+        removeThese.removeAttribute("onfocus")
+        removeThese.removeAttribute("onblur")
     }
     }
   }
@@ -83,7 +89,8 @@ easy.addEventListener("click", () => {
       if (!document.getElementById(`c${a}${b}`).disabled) {
         document.getElementById(`c${a}${b}`).removeAttribute("style");
         document.getElementById(`c${a}${b}`).classList.add("hoverEffect");
-        console.log(document.getElementById(`c${a}${b}`));
+        document.getElementById(`c${a}${b}`).setAttribute("onfocus","runFocus(this);")
+        document.getElementById(`c${a}${b}`).setAttribute("onblur","runBlur(this);")
       }
     }
   }
@@ -105,7 +112,8 @@ medium.addEventListener("click", () => {
       if (!document.getElementById(`c${a}${b}`).disabled) {
         document.getElementById(`c${a}${b}`).removeAttribute("style");
         document.getElementById(`c${a}${b}`).classList.add("hoverEffect");
-        console.log(document.getElementById(`c${a}${b}`));
+        document.getElementById(`c${a}${b}`).setAttribute("onfocus","runFocus(this);")
+        document.getElementById(`c${a}${b}`).setAttribute("onblur","runBlur(this);")
       }
     }
   }
@@ -126,8 +134,27 @@ hard.addEventListener("click", () => {
       if (!document.getElementById(`c${a}${b}`).disabled) {
         document.getElementById(`c${a}${b}`).removeAttribute("style");
         document.getElementById(`c${a}${b}`).classList.add("hoverEffect");
-        console.log(document.getElementById(`c${a}${b}`));
+        document.getElementById(`c${a}${b}`).setAttribute("onfocus","runFocus(this);")
+        document.getElementById(`c${a}${b}`).setAttribute("onblur","runBlur(this);")
       }
     }
   }
 });
+
+
+
+//onfocusing on perticular cell
+
+function runFocus(e){
+    console.log(e)
+    e.style.background="#BBDEFB"
+   //looping for row
+    
+}
+
+//onblur 
+function runBlur(e){
+   
+    e.removeAttribute("style");
+}
+
