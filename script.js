@@ -116,7 +116,6 @@ const difficulties = {
     [0, 0, 0, 0, 0, 7, 0, 0, 0], //8
   ],
 };
-
 let globalLevel = "easy";
 let emptyCell = false;
 let inputValue = null;
@@ -149,7 +148,6 @@ window.onload = () => {
   }
   globalLevel = "easy";
 };
-
 const clearPreviousBoard = () => {
   for (let i = 0; i < 9; i++) {
     for (let j = 0; j < 9; j++) {
@@ -352,7 +350,9 @@ function runFocus(e) {
       if (
         document.getElementById(`c${i}${e.id.charAt(2)}`).value === inputValue
       ) {
-        alert("Dublicate value not allowed You cant have same value in same column");
+        alert(
+          "Dublicate value not allowed You cant have same value in same column"
+        );
         break;
       }
     }
@@ -360,7 +360,9 @@ function runFocus(e) {
       if (
         document.getElementById(`c${j}${e.id.charAt(2)}`).value === inputValue
       ) {
-        alert("Dublicate value not allowed You cant have same value in same column");
+        alert(
+          "Dublicate value not allowed You cant have same value in same column"
+        );
         break;
       }
     }
@@ -375,7 +377,9 @@ function runFocus(e) {
       if (
         document.getElementById(`c${e.id.charAt(1)}${m}`).value === inputValue
       ) {
-        alert("Dublicate value not allowed You cant have same value in same row");
+        alert(
+          "Dublicate value not allowed You cant have same value in same row"
+        );
         break;
       }
     }
@@ -383,7 +387,9 @@ function runFocus(e) {
       if (
         document.getElementById(`c${e.id.charAt(1)}${n}`).value === inputValue
       ) {
-        alert("Dublicate value not allowed You cant have same value in same row");
+        alert(
+          "Dublicate value not allowed You cant have same value in same row"
+        );
         break;
       }
     }
